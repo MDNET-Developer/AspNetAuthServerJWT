@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "MD.AuthServer.Core/1.0.0": {
+        "runtime": {
+          "MD.AuthServer.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MD.AuthServer.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "MD.AuthServer.Service/1.0.0": {
+        "dependencies": {
+          "MD.AuthServer.Data": "1.0.0"
+        },
+        "runtime": {
+          "MD.AuthServer.Service.dll": {}
+        }
+      },
+      "MD.AuthServer.Core/1.0.0": {
+        "runtime": {
+          "MD.AuthServer.Core.dll": {}
+        }
+      },
+      "MD.AuthServer.Data/1.0.0": {
+        "dependencies": {
+          "MD.AuthServer.Core": "1.0.0"
+        },
+        "runtime": {
+          "MD.AuthServer.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MD.AuthServer.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MD.AuthServer.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MD.AuthServer.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

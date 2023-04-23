@@ -1,0 +1,15 @@
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\bin\Debug\net5.0\MD.AuthServer.Data.deps.json
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\bin\Debug\net5.0\MD.AuthServer.Data.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\bin\Debug\net5.0\MD.AuthServer.Data.pdb
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\MD.AuthServer.Data.csproj.AssemblyReference.cache
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\MD.AuthServer.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\MD.AuthServer.Data.AssemblyInfoInputs.cache
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\MD.AuthServer.Data.AssemblyInfo.cs
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\MD.AuthServer.Data.csproj.CoreCompileInputs.cache
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\MD.AuthServer.Data.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\refint\MD.AuthServer.Data.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\MD.AuthServer.Data.pdb
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\ref\MD.AuthServer.Data.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\bin\Debug\net5.0\MD.AuthServer.Core.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\bin\Debug\net5.0\MD.AuthServer.Core.pdb
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\MD.AuthServer.Data.csproj.CopyComplete
