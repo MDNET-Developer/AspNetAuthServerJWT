@@ -13,3 +13,8 @@ D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\ref\MD.AuthServe
 D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\bin\Debug\net5.0\MD.AuthServer.Core.dll
 D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\bin\Debug\net5.0\MD.AuthServer.Core.pdb
 D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\MD.AuthServer.Data.csproj.CopyComplete
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\bin\Debug\net5.0\SharedLiblary.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\bin\Debug\net5.0\SharedLiblary.pdb
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\bin\Debug\net5.0\MD.AuthServer.Data.runtimeconfig.json
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\bin\Debug\net5.0\MD.AuthServer.Data.runtimeconfig.dev.json
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Data\obj\Debug\net5.0\MD.AuthServer.Data.genruntimeconfig.cache

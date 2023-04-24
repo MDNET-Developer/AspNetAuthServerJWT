@@ -10,3 +10,6 @@ D:\MyProjects\MD.AuthServer\MD.AuthServer.Core\obj\Debug\net5.0\MD.AuthServer.Co
 D:\MyProjects\MD.AuthServer\MD.AuthServer.Core\obj\Debug\net5.0\refint\MD.AuthServer.Core.dll
 D:\MyProjects\MD.AuthServer\MD.AuthServer.Core\obj\Debug\net5.0\MD.AuthServer.Core.pdb
 D:\MyProjects\MD.AuthServer\MD.AuthServer.Core\obj\Debug\net5.0\ref\MD.AuthServer.Core.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Core\bin\Debug\net5.0\SharedLiblary.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Core\bin\Debug\net5.0\SharedLiblary.pdb
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Core\obj\Debug\net5.0\MD.AuthServer.Core.csproj.CopyComplete

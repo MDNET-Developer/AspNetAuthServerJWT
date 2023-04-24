@@ -15,3 +15,5 @@ D:\MyProjects\MD.AuthServer\MD.AuthServer.Service\bin\Debug\net5.0\MD.AuthServer
 D:\MyProjects\MD.AuthServer\MD.AuthServer.Service\bin\Debug\net5.0\MD.AuthServer.Data.pdb
 D:\MyProjects\MD.AuthServer\MD.AuthServer.Service\bin\Debug\net5.0\MD.AuthServer.Core.pdb
 D:\MyProjects\MD.AuthServer\MD.AuthServer.Service\obj\Debug\net5.0\MD.AuthServer.Service.csproj.CopyComplete
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Service\bin\Debug\net5.0\SharedLiblary.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.Service\bin\Debug\net5.0\SharedLiblary.pdb
