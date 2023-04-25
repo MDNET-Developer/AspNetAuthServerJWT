@@ -74,3 +74,9 @@ D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\runtimes\win-x86\
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\AutoMapper.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
