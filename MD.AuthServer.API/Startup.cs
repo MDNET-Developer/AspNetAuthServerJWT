@@ -1,3 +1,4 @@
+using MD.AuthServer.Core.Configration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,7 @@ namespace MD.AuthServer.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<CustomTokenOptions>(Configuration.GetSection("TokenOption"));
+            services.Configure<Client>(Configuration.GetSection("Clients"));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
