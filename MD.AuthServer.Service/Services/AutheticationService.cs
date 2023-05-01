@@ -5,6 +5,7 @@ using MD.AuthServer.Core.Repositries;
 using MD.AuthServer.Core.Service;
 using MD.AuthServer.Core.UnitOfWork;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using SharedLiblary.Dtos;
 using System;
@@ -32,9 +33,37 @@ namespace MD.AuthServer.Service.Services
             _userRefreshTokenService = userRefreshTokenService;
         }
 
-        public Task<Response<TokenDto>> CreateToken(LogInDto logIn)
+        public async Task<Response<TokenDto>> CreateToken(LogInDto logIn)
         {
-            throw new NotImplementedException();
+            if (logIn == null)
+                throw new ArgumentNullException(nameof(logIn));
+            
+
+            var user = await _userManager.FindByEmailAsync(logIn.Email);
+            if(user == null) 
+                return Response<TokenDto>.Fail("Email or Password not correct", 400, true);
+            
+            if((await _userManager.CheckPasswordAsync(user,password:logIn.Password))==false)
+                return Response<TokenDto>.Fail("Email or Password not correct", 400, true);
+            
+
+
+            var token = _tokenService.CreateToken(user);
+            var userRefreshToken = await _userRefreshTokenService.Where(x => x.UserId == user.Id).SingleOrDefaultAsync();
+            if(userRefreshToken == null)
+               await _userRefreshTokenService.AddAsync(new UserRefreshToken()
+                {
+                    UserId=user.Id,
+                    Code=token.RefreshToken,
+                    Expiration=token.RefreshTokenExpiration
+                });
+
+            else
+                userRefreshToken.Code = token.RefreshToken;
+                userRefreshToken.Expiration = token.RefreshTokenExpiration;
+            
+            await _unitofwork.CommitAsync();
+            return Response<TokenDto>.Success(token, 200);
         }
 
         public Task<Response<ClientLogInDto>> CreateTokenByClient(ClientLogInDto clientLogInDto)
