@@ -1,8 +1,17 @@
 using MD.AuthServer.Core.Configration;
+using MD.AuthServer.Core.Model;
+using MD.AuthServer.Core.Repositries;
+using MD.AuthServer.Core.Service;
+using MD.AuthServer.Data;
+using MD.AuthServer.Data.Repositories;
+using MD.AuthServer.Service.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,9 +36,54 @@ namespace MD.AuthServer.API
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {//DI Regiater
+            services.AddScoped<IAuthenticationService, AutheticationService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IGenericService<,>), typeof(GenericService<,>));
+
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("LocalDb"), sqlOptions =>
+                {
+                    sqlOptions.MigrationsAssembly("MD.AuthServer.Data");
+                });
+            });
+
+
+            services.AddIdentity<UserApp, IdentityRole>(options =>
+            {
+                options.User.RequireUniqueEmail = true;
+                options.Password.RequireNonAlphanumeric = false;  
+                //sifre sifirlama ucun adddefaulttokenproviders yazildi
+            }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+
             services.Configure<CustomTokenOptions>(Configuration.GetSection("TokenOption"));
+
             services.Configure<Client>(Configuration.GetSection("Clients"));
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, opt =>
+            {
+                var tokenOptions = Configuration.GetSection("TokenOption").Get<CustomTokenOptions>();
+                opt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+                {
+                    ValidIssuer = tokenOptions.Issuer,
+                    ValidAudience = tokenOptions.Audence[0],
+                    IssuerSigningKey=SignService.GetSymmetricSecurityKey(tokenOptions.SecurityKey),
+                    ValidateIssuerSigningKey = true,
+                    ValidateAudience=true,
+                    ValidateIssuer=true,
+                    ValidateLifetime=true,
+                    //Umumi vaxt(Bolgeler arasi zaman ferqi levg edir)
+                    ClockSkew=TimeSpan.Zero,
+                };
+            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -65,20 +65,56 @@ namespace MD.AuthServer.Service.Services
             await _unitofwork.CommitAsync();
             return Response<TokenDto>.Success(token, 200);
         }
+        //-------------------------------------------------------------------
 
-        public Task<Response<ClientLogInDto>> CreateTokenByClient(ClientLogInDto clientLogInDto)
+
+        public Response<ClientTokenDto> CreateTokenByClient(ClientLogInDto clientLogInDto)
         {
+            var chkClient =  _clients.SingleOrDefault(x=>x.Id == clientLogInDto.ClientId && x.Secret== clientLogInDto.ClientSecret);
+            if(chkClient == null)
+            {
+                return Response<ClientTokenDto>.Fail("ClientId or secret not found", 404, true);
+            }
+            var token = _tokenService.CreateTokenByClient(chkClient);
+            return Response<ClientTokenDto>.Success(token,200);
             throw new NotImplementedException();
         }
+        //-------------------------------------------------------------------
 
-        public Task<Response<TokenDto>> CreateTokenByRefreshToken(string refreshToken)
+
+
+        public async Task<Response<TokenDto>> CreateTokenByRefreshToken(string refreshToken)
         {
-            throw new NotImplementedException();
+            var refreshTokenChk = await _userRefreshTokenService.Where(x=>x.Code==refreshToken).FirstOrDefaultAsync();
+            if(refreshTokenChk == null)
+            {
+                return Response<TokenDto>.Fail("RefreshToken not found",404,true);
+            }
+            var user = await _userManager.FindByIdAsync(refreshTokenChk.UserId);
+            if(user == null)
+            {
+                return Response<TokenDto>.Fail("UserId not found", 404, true);
+            }
+            var refreshtokenDto = _tokenService.CreateToken(user);
+            refreshTokenChk.Code = refreshtokenDto.RefreshToken;
+            refreshTokenChk.Expiration = refreshtokenDto.RefreshTokenExpiration;
+            await _unitofwork.CommitAsync();
+            return Response<TokenDto>.Success(refreshtokenDto, 200);
         }
+        //-------------------------------------------------------------------
 
-        public Task<Response<NoDataDto>> RevokeRefreshToken(string refreshToken)
+
+        public async Task<Response<NoDataDto>> RevokeRefreshToken(string refreshToken)
         {
-            throw new NotImplementedException();
+            var refreshTokenChk = await _userRefreshTokenService.Where(x => x.Code == refreshToken).FirstOrDefaultAsync();
+            if (refreshTokenChk == null)
+            {
+                return Response<NoDataDto>.Fail("RefreshToken not found", 404, true);
+            }
+            _userRefreshTokenService.Remove(refreshTokenChk);
+            await _unitofwork.CommitAsync();
+            return Response<NoDataDto>.Success(200);
+
         }
     }
 }

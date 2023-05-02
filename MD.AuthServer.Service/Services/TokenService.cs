@@ -62,6 +62,7 @@ namespace MD.AuthServer.Service.Services
             var accsessTokenExpiration= DateTime.Now.AddMinutes(_customTokenOptions.AccessTokenExpiration);
             var refreshTokenExpiration = DateTime.Now.AddMinutes(_customTokenOptions.RefreshTokenExpiration);
             var securityKey = SignService.GetSymmetricSecurityKey(_customTokenOptions.SecurityKey);
+
             SigningCredentials signingCredentials = new SigningCredentials(securityKey,SecurityAlgorithms.HmacSha256);
 
             JwtSecurityToken jwtSecurityToken = new JwtSecurityToken(
@@ -89,7 +90,6 @@ namespace MD.AuthServer.Service.Services
         {
 
             var accsessTokenExpiration = DateTime.Now.AddMinutes(_customTokenOptions.AccessTokenExpiration);
-            
             var securityKey = SignService.GetSymmetricSecurityKey(_customTokenOptions.SecurityKey);
             SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 

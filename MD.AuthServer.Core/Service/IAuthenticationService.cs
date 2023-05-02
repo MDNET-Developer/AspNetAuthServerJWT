@@ -14,6 +14,6 @@ namespace MD.AuthServer.Core.Service
         Task<Response<TokenDto>> CreateToken(LogInDto logIn); //Eger bu loginDto dogrudursa geriye Token donecek
         Task<Response<TokenDto>> CreateTokenByRefreshToken(string refreshToken);
         Task<Response<NoDataDto>> RevokeRefreshToken(string refreshToken);
-        Task<Response<ClientLogInDto>> CreateTokenByClient(ClientLogInDto clientLogInDto);
+        Response<ClientTokenDto> CreateTokenByClient(ClientLogInDto clientLogInDto);
     }
 }

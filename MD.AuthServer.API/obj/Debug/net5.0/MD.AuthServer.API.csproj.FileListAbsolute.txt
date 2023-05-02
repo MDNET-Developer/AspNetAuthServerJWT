@@ -57,7 +57,6 @@ D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.Identit
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\System.Runtime.Caching.dll
@@ -80,3 +79,6 @@ D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.Extensi
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Humanizer.dll
+D:\MyProjects\MD.AuthServer\MD.AuthServer.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
